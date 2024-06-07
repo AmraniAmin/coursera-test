@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="LunchCheck">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lunch Check</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>hello coursera Student!</h1>
-    <p>AMRANI Mohammed Amin web site </p>
+    <div ng-controller="LunchCheckController">
+        <h1>Lunch Checker</h1>
+        <p>Entrez les éléments que vous mangez habituellement pour le déjeuner, séparés par des virgules:</p>
+        <input type="text" ng-model="lunchItems" placeholder="Ex: salade, sandwich, pomme">
+        <button ng-click="checkIfTooMuch()">Vérifier si trop</button>
+        <div ng-if="message" ng-style="{'color': messageColor, 'border-color': messageColor}">
+            {{ message }}
+        </div>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
